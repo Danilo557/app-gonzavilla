@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class Service
 {
     protected $model;
+    public function __construct()
+    {
+    }
 
     public function all()
     {
@@ -21,7 +24,7 @@ class Service
         return $model;
     }
 
-    public function update(Request $request, Model $model): Model
+    public  function update(Request $request, Model $model): Model
     {
         $model->update($request->all());
         return $model;

@@ -9,6 +9,12 @@ class Category extends Model
 {
     use HasFactory;
     protected $guarded  = ['id', 'created_at','updated_at'];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    
     public function subcategories()
     {
         return $this->hasMany(Subcategory::class);

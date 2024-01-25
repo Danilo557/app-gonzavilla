@@ -1,8 +1,12 @@
+@if (Request::routeIs('admin.lines.edit'))
 <div class="form-group">
     <div action="{{ route('admin.lines.upload', $line) }}" class="dropzone" id="my-great-dropzone">
 
     </div>
 </div>
+@endif
+
+
 <div class="form-group">
      
 

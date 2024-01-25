@@ -55,7 +55,6 @@
                                             @method('DELETE')
                                             <button class="btn btn-lg btn-danger"><i class="fas fa-trash"></i></button>
                                         </form>
-
                                     </td>
                                 </tr>
                             @endforeach

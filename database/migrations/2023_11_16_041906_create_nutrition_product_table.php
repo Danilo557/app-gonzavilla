@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nutrition_product', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('nutrition_id')->constrained()->onDelete('cascade');
-            $table->foreignId('product_id')->constrained()->onDelete('cascade');
-            $table->float('percentage');
-            $table->timestamps();
-        });
+        // Schema::create('nutrition_product', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('nutrition_id')->constrained()->onDelete('cascade');
+        //     $table->foreignId('product_id')->constrained()->onDelete('cascade');
+        //     $table->float('percentage')->nullable();
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nutrition_product');
+        // Schema::dropIfExists('nutrition_product');
     }
 };

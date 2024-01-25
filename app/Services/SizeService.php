@@ -2,13 +2,13 @@
 
 namespace App\Services;
 
-use App\Models\Line;
+use App\Models\Size;
 use Illuminate\Http\Request;
 
-class LineService extends Service
+class SizeService extends Service
 {
     public function __construct()
     {
-        $this->model = 'App\Models\Line';
+        $this->model = 'App\Models\Size';
     }
 }

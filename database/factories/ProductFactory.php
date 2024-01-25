@@ -26,6 +26,7 @@ class ProductFactory extends Factory
             'slug'=>Str::slug($name),
             'description'=>$this->faker->text(2000),
             'suggested_use'=>$this->faker->text(2000),
+            'ingredients'=>$this->faker->text(2000),
             'line_id'=> Line::all()->random()->id,
             'category_id'=> Category::all()->random()->id,
             'subcategory_id'=> SubCategory::all()->random()->id,

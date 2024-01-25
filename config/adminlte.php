@@ -309,14 +309,48 @@ return [
             'text' => 'Lines',
             'url'  => 'admin/lines',
             'icon' => 'fab fa-line',
-            'active' => [ 'admin/lines*']
+            'active' => ['admin/lines*']
         ],
 
         [
             'text' => 'Categories',
             'url'  => 'admin/categories',
-            'icon' => 'fab fa-line',
-            'active' => [ 'admin/categories*']
+            'icon' => 'fas fa-th-list',
+            'active' => ['admin/categories*']
+        ],
+        [
+            'text' => 'SubCategories',
+            'url'  => 'admin/subcategories',
+            'icon' => 'fas fa-th-list',
+            'active' => ['admin/subcategories*']
+        ],
+
+        [
+            'text' => 'Features',
+            'url'  => 'admin/features',
+            'icon' => 'fab fa-buromobelexperte',
+            'active' => ['admin/features*']
+        ],
+
+        [
+            'text' => 'Sizes',
+            'url'  => 'admin/sizes',
+            'icon' => 'fas fa-ruler',
+            'active' => ['admin/sizes*']
+        ],
+
+        [
+            'text' => 'Nutrition',
+            'url'  => 'admin/nutrition',
+            'icon' => 'fas fa-apple-alt',
+            'active' => ['admin/nutrition*']
+        ],
+
+        [
+            'text' => 'Products',
+            'url'  => 'admin/products',
+            'icon' => 'fab fa-product-hunt',
+            'active' => ['admin/products*']
         ],
 
 
@@ -357,7 +391,7 @@ return [
     */
 
     'plugins' => [
-         
+
 
         'Datatables' => [
             'active' => false,
@@ -372,11 +406,11 @@ return [
                     'asset' => false,
                     'location' => 'https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js',
                 ],
-                
+
 
                 //buttons
 
-                 
+
 
 
 
@@ -386,7 +420,7 @@ return [
                     'asset' => false,
                     'location' => 'https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css',
                 ],
-                 
+
                 [
                     'type' => 'css',
                     'asset' => false,
@@ -400,7 +434,7 @@ return [
                 ],
 
                 //buttons
-               
+
             ],
         ],
         'Select2' => [

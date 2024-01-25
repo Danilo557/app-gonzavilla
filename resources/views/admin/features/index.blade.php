@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Categories</h1>
+    <h1>features</h1>
 @stop
 
 @section('content')
@@ -16,7 +16,7 @@
 
         <div class="d-flex flex-column">
             <div>
-                <a class="btn btn-success  mb-3" href="{{ route('admin.categories.create') }}">
+                <a class="btn btn-success  mb-3" href="{{ route('admin.features.create') }}">
                     <i class="fas fa-plus"></i>
                 </a>
             </div>
@@ -32,19 +32,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $category)
+                            @foreach ($features as $feature)
                                 <tr>
                                     <td>
-                                        {{ $category->name }}
+                                        {{ $feature->name }}
                                     </td>
 
                                     <td class="text-center">
-                                        <a class="btn btn-primary" href="{{ route('admin.categories.edit', $category) }}">
+                                        <a class="btn btn-primary" href="{{ route('admin.features.edit', $feature) }}">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
+                                        <form action="{{ route('admin.features.destroy', $feature) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-lg btn-danger"><i class="fas fa-trash"></i></button>

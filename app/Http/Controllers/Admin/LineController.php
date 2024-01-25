@@ -34,7 +34,6 @@ class LineController extends Controller
     public function update(LineRequest $request, Line $line)
     {
         $updateline = $this->lineService->update($request, $line);
-
         return redirect()->route('admin.lines.edit', $updateline)->with('info', 'registro actualizado');
     }
 
@@ -46,14 +45,12 @@ class LineController extends Controller
     public function store(LineRequest  $request)
     {
         $newLine = $this->lineService->store($request);
-
         return redirect()->route('admin.lines.edit', $newLine)->with('info', 'registro creado');
     }
 
     public function destroy(Line $line)
     {
         $this->lineService->destroy($line);
-
         return redirect()->route('admin.lines.index')->with('info', 'Se elimino el registro');
     }
 
