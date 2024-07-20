@@ -4,13 +4,21 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Models\Category;
+use App\Models\Feature;
+use App\Models\Line;
+use App\Models\Nutrition;
 use App\Models\Product;
+use App\Models\Size;
+use App\Models\Subcategory;
 use App\Services\ProductService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     private ProductService $productService;
+
+
 
     public function __construct(ProductService $productService)
     {
@@ -19,24 +27,33 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->productService->all();
-        return view('admin.products.index', compact("products"));
+        return $this->productService->all();
+    }
+
+    public function create()
+    {
+        return $this->productService->create();
+    }
+
+    public function store(ProductRequest $request)
+    {
+        return $this->productService->store($request);
     }
 
     public function edit(Product $product)
     {
-        $lines = $this->productService->lines();
-        $categories = $this->productService->categories();
-        $subcategories = $this->productService->subcategories($product->category_id);
-        $features = $this->productService->features();
-        $sizes = $this->productService->sizes();
-        $product_size = $product->sizes;
-        return view('admin.products.edit', compact("product", "lines", "categories", "subcategories", "features", "sizes", "product_size"));
+
+        return $this->productService->edit($product);
     }
 
     public function update(ProductRequest $request, Product $product)
     {
-        $updateproduct = $this->productService->update($request, $product);
-        return redirect()->route('admin.products.edit', $updateproduct)->with('info', 'registro actualizado');
+        return $this->productService->update($request, $product);
+    }
+
+    public function privot_nutrition(Request $request)
+    {
+
+        $this->productService->privot_nutrition($request);
     }
 }

@@ -21,8 +21,17 @@ class Line extends Model
 
     public function getImageUrlAttribute()
     {
-        return isset($this->images[0]) ?  $this->images[0]->url : 'landing/img/404-picture-not-found.jpg';
+        return isset($this->images[0]) ?  $this->images[0]->url : '/img/landing/image-not-found.jpg';
     }
+
+
+    public function getImageCountAttribute()
+    {
+        return count( $this->images);
+    }
+
+
+     
 
     public function products()
     {

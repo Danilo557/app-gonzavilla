@@ -43,18 +43,34 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 @stop
+@section('plugins.Sweetalert2', true)
+
 @section('js')
+
+    <script>
+        var product_id = {{ $product->id }};
+        var url_delete_products_delete_nutrition = "{{ route('nutrition.delete') }}";
+        var url_get_nutrition_information_table = "{{ route('nutrition.table') }}";
+        var url_add_nutrition_information_table = "{{ route('nutrition.add') }}";
+    </script>
     <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('js/slugify.js') }}"></script>
     <script src="{{ asset('js/ckeditor-config.js') }}"></script>
-
-
+    <script src="{{ asset('js/products.js') }}"></script>
     <script>
-        $('#slug').slugify('#name');
-
+        $(document).on('change', '#image', function(event) {
+                $file=event.target.files[0];
+                $reader= new FileReader();
+                $reader.onload=(event)=>{
+                    $('#preview').attr('src',event.target.result)
+                }
+                $reader.readAsDataURL($file);
+            })
+    </script>
+    <script>
         $('.js-example-basic-multiple').select2({
             ajax: {
                 url: "{{ route('sizes.select2') }}",
@@ -73,5 +89,33 @@
                 }
             }
         });
+
+
+        $(document).on('change', '#category_id', function() {
+
+            $.ajax({
+                url: "{{ route('subcategories.select2') }}",
+                type: 'POST',
+                data: {
+                    category_id: $(this).val()
+                },
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function(response) {
+
+                    //console.log(response);
+                    $("#subcategory_id").empty();
+                    $html = `<option selected="selected" value="">Subcategory</option>`;
+                    $.each(response, function(index, item) {
+                        $html += `<option value="${index}">${item}</option>`;
+                    });
+
+                    $("#subcategory_id").append($html);
+                },
+                error: function() {
+                    alert("error");
+                }
+            });
+        });
     </script>
+
 @stop

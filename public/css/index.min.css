@@ -1,0 +1,459 @@
+ 
+ /*--------------------------------------------------------------
+  # background
+  --------------------------------------------------------------*/
+  .nm_bg_dos,.bg_tres{
+    background-size: cover;
+    background-repeat:no-repeat;
+    
+  }
+
+  /*--------------------------------------------------------------
+  # Section valores 
+  --------------------------------------------------------------*/
+  .valores{
+    height: 50vh;
+  }
+
+  .valores .container-fluid {
+    margin: 0 5%;
+  }
+
+  .valores h2{
+    width: 150px;
+    height: auto;
+    color: white;
+    padding: 10px;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50px;
+    background: #ad2623;
+    z-index: 10;
+    border:2px solid black;
+  }
+
+  .valores .contenedor{
+    margin-top: -40px;
+    border: 2px solid black;
+    padding: 10% 20px;
+    border-radius: 50px;
+    min-height: 200px;
+    min-width: 250px;
+    height: auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 400px;
+    height: 200px;
+  }
+
+  .valores .contenedor ul{
+    list-style: none;
+    padding: 0;
+  }
+
+  .valores .contenedor ul li i{
+    font-size: 8px;
+    margin-right: 10px;
+    color: #ad2623;
+  }
+  
+  @media (max-width: 1500px) {
+    .valores .contenedor{
+      width: auto;
+      height: auto;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+    .valores .container-fluid {
+      margin: auto;
+    }
+    .valores .vl{
+      display: none;
+    }
+  }
+  @media (max-width: 992px) {
+    
+    .valores{
+     margin: auto; 
+     height: auto;
+   }
+   .valores .contenedor{
+    margin-top: -35px;
+    min-height: auto;
+    width: 100%;
+    height: auto;
+    min-width: 300px;
+    min-height: 150px;
+  }
+  .valores  h2{
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .valores .contenedor p{
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .valores .contenedor ul{
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+@media (max-width: 576px) {
+  .valores .contenedor ul{
+    padding-left:10% ;
+  }
+}
+
+  /*--------------------------------------------------------------
+  # Videos Section
+  --------------------------------------------------------------*/
+  .videos{
+    height: auto;
+    /* margin:0 10%; */
+  }
+  .videos h2{
+    color: #ad2623;
+  }
+  .videos p{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+  }
+  .videos .video-gonzavila{
+    width: 100%;
+    height: auto;
+  }
+  .videos .vl{
+    height: 100px;
+  }
+
+   /*--------------------------------------------------------------
+  # Section Nuestros Productos 
+  --------------------------------------------------------------*/
+  .nuestros-productos{
+    background: transparent;
+  }
+  .nuestros-productos .contenedor-producto{
+    width: 200px;
+    width: auto;
+  }
+  .nuestros-productos  hr{
+   margin-bottom: 2rem ;
+ }
+ .nuestros-productos h2{
+  font-family: "Myriadpro Bold";
+  color: #8c7349;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.nuestros-productos .img-producto{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  min-width: 250px;
+}
+
+.nuestros-productos .title-product{
+  font-family: "Philadelphian";
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: -50px;
+  
+}
+.nuestros-productos .subtitle-product{
+  font-family: "Philadelphian";
+  font-size: 2rem;
+  font-weight: normal;
+}
+/* Carrousel */
+.nuestros-productos .fa-angle-left,.nuestros-productos .fa-angle-right{
+  color: rgba(0, 0, 0,0.5);
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+.nuestros-productos  .carousel-indicators{
+  position: absolute;
+  top: 100%;
+}
+
+@media (max-width: 768px) {
+  .nuestros-productos  hr{
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .nuestros-productos{
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+  .nuestros-productos .section-title, .nuestros-productos .section-title h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Section Sucursales 
+--------------------------------------------------------------*/
+.sucursales{
+    padding-top: 0;
+    background: transparent;
+    background: white;
+    position: relative;
+}
+
+.sucursales h2{
+  font-family: "Myriadpro Bold";
+  color: #ac2625;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.sucursales .img-sucursal{
+  width: 200px;
+  height: 200px;
+  max-height: 200px;
+  max-width: 200px;
+  object-fit: fill;
+}
+
+.sucursales .container-fluid{
+  padding: 0;
+}
+  
+  /*Drop down */
+.sucursales .contenedor-sucursal{
+  margin-right: 20%;
+  padding: 20px 50px 20px 10%;
+  border-radius: 0 0 50px 0;
+  background: transparent;
+  background:#808080;
+  background: linear-gradient(0deg, rgba(128,128,128,0.5) 0%, rgba(128,128,128,0.3) 50%,  transparent 100%);
+  background: -moz-linear-gradient(0deg, rgba(128,128,128,0.5) 0%, rgba(128,128,128,0.3) 50%,  transparent 100%);
+  background: -webkit-linear-gradient(0deg, rgba(128,128,128,0.5) 0%, rgba(128,128,128,0.3) 50%,  transparent 100%);
+  background: linear-gradient(0deg, rgba(128,128,128,0.5) 0%, rgba(128,128,128,0.3) 50%,  transparent 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#808080",endColorstr="#808080",GradientType=1)
+}
+
+.sucursales .elemet-list{
+  background: #e4e4e4;
+  border-radius: 0 50px 50px 0;
+  font-size: 1.5rem;
+  font-family :"Myriadpro Bold";
+  text-align: right;
+  padding: 20px 10px;
+  color: #ac2625;
+}
+  .sucursales .faq-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  .sucursales .faq-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .sucursales .faq-list .faq-button {
+    border: 2px solid #ac2623;
+    border-radius: 0 50px 50px 0;
+    border-left: 0px;
+    margin: 20px 0;
+    padding: 20px 0;
+    margin-right: 55%;
+    display: block;
+    position: relative;
+    font-family: #e03a3c;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-right: 25px;
+  }
+
+  .sucursales .faq-list i {
+    font-size: 24px;
+    position: relative;
+    padding: 5px 20px 10px 20px;
+  }
+  .sucursales .faq-list .fa-circle {
+    font-size: 8px;
+    padding-bottom: 10px;
+  }
+
+  .sucursales .faq-list p {
+    margin:0;
+  }
+
+  .sucursales .faq-list .fa-sort-down {
+    display: none;
+  }
+
+  .sucursales .faq-list a.collapsed {
+    color: #343a40;
+  }
+
+  .sucursales .faq-list a.collapsed:hover {
+    color: #e03a3c;
+  }
+
+  .sucursales .faq-list a.collapsed .fa-sort-down {
+    display: inline-block;
+  }
+
+  .sucursales .faq-list a.collapsed .fa-times {
+    display: none;
+  }
+
+  /*Social Button*/
+  .sucursales .btn {
+    clear:both;
+    white-space:nowrap;
+    font-size:.8em;
+    display:inline-block;
+    border-radius:5px;
+    margin:2px;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    transition:all .5s;
+    overflow:hidden;
+    min-width: 180px;     
+  }
+
+  .sucursales .btn > span,.sucursales .btn-icon > i {
+    float:left;
+    padding:13px;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    transition:all .5s;
+    line-height:1em
+  }
+
+  .sucursales .btn > span {
+    padding:14px 18px 16px;
+    white-space:nowrap;
+    color:#FFF;
+    background:#b8b8b8;
+    width: 70%;
+     
+  }
+
+  .sucursales .btn:focus > span {
+    background:#9a9a9a
+  }
+
+  .sucursales .btn-icon > i {
+    border-radius:5px 0 0 5px;
+    position:relative;
+    width:auto;
+    height: 43px;
+    text-align:center;
+    font-size:1.25em;
+    color:#fff;
+    background:#212121;
+    width: 30%;
+  }
+
+  .sucursales .btn-icon >  i:after {
+    content:"";
+    border:8px solid;
+    border-color:transparent transparent transparent #222;
+    position:absolute;
+    top:13px;
+    right:-15px
+  }
+
+  .sucursales .btn-icon:hover > i,.sucursales .btn-icon:focus > i {
+    color:#FFF
+  }
+
+  .sucursales .btn-icon > span {
+    border-radius:0 5px 5px 0
+  }
+   
+  /*phone*/
+  .sucursales .btn-phone:hover > i,.sucursales .btn-phone:focus > i {
+    color:#ad2624
+  }
+
+  .sucursales .btn-phone > span {
+    background:#ad2624
+  }
+
+  /*whatsapp*/
+  .sucursales .btn-whatsapp:hover > i,.sucursales .btn-whatsapp:focus > i {
+    color:#ad2624
+  }
+  
+  .sucursales .btn-whatsapp > span {
+    background:#ad2624
+  }
+
+  /*marker*/
+  .sucursales .btn-marker:hover > i,.sucursales .btn-marker:focus > i {
+    color:#ad2624
+  }
+
+  .sucursales .btn-marker > span {
+    background:#ad2624
+  }
+  /* Carrousel movil */
+  .sucursales .carousel-indicators{
+    bottom: 0;
+    position: absolute;
+  } 
+  .sucursales .carousel-indicators li{
+    position: relative;
+    padding-bottom: 0px;
+  }
+  @media (max-width: 1200px) {
+    .sucursales .faq-list .faq-button  {
+      margin: 20px 0;
+      padding: 20px 0;
+      padding-right: 25px;
+    }
+    .sucursales .contenedor-sucursal{
+      margin: auto;
+      padding: 0 0px;
+    }
+  }
+  @media (max-width: 992px) {
+    .sucursales .myriad-bold{
+      text-align: center;
+    }
+    .sucursales p{
+      text-align: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .sucursales .carousel-inner{
+      height: 85vh;
+    }
+    .sucursales .contenedor-sucursal h3,.sucursales .contenedor-sucursal h3 span{
+      font-size: 1.2rem;
+    }
+    .sucursales .contenedor-sucursal p{
+      font-size: 0.8rem;
+    }
+    .sucursales hr{
+      display: none;
+    }
+  }
+  @media (max-width: 576px) {
+    .sucursales .contenedor-sucursal p{
+      width: 100%;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .sucursales .contenedor-sucursal h3{
+      width: 100%;
+      padding: 0 20px;
+      text-align: center;
+    }
+  }
+  
+
+
+
+

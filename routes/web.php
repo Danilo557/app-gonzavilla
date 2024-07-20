@@ -20,9 +20,13 @@ Route::get('/', function () {
 
 //Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- 
- 
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/paw-wow', [App\Http\Controllers\HomeController::class, 'pawwow'])->name('pawwow');
+Route::get('/lines/{line}', [App\Http\Controllers\HomeController::class, 'lines'])->name('lines');
+
+

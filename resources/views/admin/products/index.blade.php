@@ -27,6 +27,7 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Line</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -37,7 +38,9 @@
                                     <td>
                                         {{ $product->name }}
                                     </td>
-
+                                    <td>
+                                        {{ $product->line->name }}
+                                    </td>
                                     <td class="text-center">
                                         <a class="btn btn-primary" href="{{ route('admin.products.edit', $product) }}">
                                             <i class="fas fa-pen"></i>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BrancheController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\FileController;
@@ -22,6 +23,17 @@ Route::resource('sizes', SizeController::class)->names('admin.sizes');
 Route::resource('nutrition', NutritionController::class)->names('admin.nutrition');
 Route::resource('products', ProductController::class)->names('admin.products');
 
+Route::resource('branches', BrancheController::class)->names('admin.branches');
+
+//Route::get('products/nutritions/delete', [ProductController::class, 'delete_nutrition'])->name('admin.products.delete.nutrition');
+//Route::get('products/nutrition/table', [ProductController::class, 'nutrition_information'])->name('admin.products.nutrition.table');
+Route::get('products/nutritions/privot_nutrition', [ProductController::class, 'privot_nutrition'])->name('admin.products.nutrition.pivot');
+
+
+
+
 Route::post('lines/{model}/upload', [LineController::class, 'upload'])->name('admin.lines.upload');
 Route::get('lines/{model}/images', [LineController::class, 'images'])->name('admin.lines.images');
 Route::delete('lines/removeimage/{image}', [LineController::class, 'removeImage'])->name('admin.lines.removeimage');
+
+ 

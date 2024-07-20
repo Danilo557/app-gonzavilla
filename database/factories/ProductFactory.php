@@ -24,9 +24,9 @@ class ProductFactory extends Factory
         return [
             'name'=>$name,
             'slug'=>Str::slug($name),
-            'description'=>$this->faker->text(2000),
-            'suggested_use'=>$this->faker->text(2000),
-            'ingredients'=>$this->faker->text(2000),
+            'description'=>$this->faker->text(500),
+            'suggested_use'=>$this->faker->text(500),
+            'ingredients'=>$this->faker->text(500),
             'line_id'=> Line::all()->random()->id,
             'category_id'=> Category::all()->random()->id,
             'subcategory_id'=> SubCategory::all()->random()->id,

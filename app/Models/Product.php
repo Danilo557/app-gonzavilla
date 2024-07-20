@@ -17,6 +17,11 @@ class Product extends Model
         return 'slug';
     }
 
+    public function getImageUrlAttribute()
+    {
+        return isset($this->image) ?  $this->image->url : '/img/landing/image-not-found.jpg';
+    }
+
     public function feature()
     {
         return $this->belongsTo(Feature::class);

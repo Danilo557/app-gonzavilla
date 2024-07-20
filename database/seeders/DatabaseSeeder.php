@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Branche;
 use App\Models\Category;
 use App\Models\Feature;
 use App\Models\Line;
@@ -33,11 +34,22 @@ class DatabaseSeeder extends Seeder
             'email'=>'yolo@yolo.com',
             'password'=> bcrypt('123456789')
         ]);
+
+
+        $this->call(StateSeeder::class);
+        $this->call(MunicipalitySeeder::class);
+
+        $this->call(TypeSeeder::class);
+        Branche::factory(50)->create();
+
+        
         Storage::deleteDirectory('posts');
         Storage::makeDirectory('posts');
 
         $this->call(LineSeeder::class);
-        Category::factory(5)->create();
+
+        Category::create(['name'=>'Mile','slug'=>'mile']);
+        
         Subcategory::factory(10)->create();
         Feature::factory(5)->create();
         Nutrition::factory(8)->create();
@@ -45,6 +57,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ProductSeeder::class);
         $this->call(NutritionProductSeeder::class);
+
+        
+
+
+
 
     }
 }

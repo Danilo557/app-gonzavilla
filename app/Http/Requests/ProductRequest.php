@@ -26,10 +26,16 @@ class ProductRequest extends FormRequest
         $rules = [
             'name' => 'required',
             'slug' => 'required|max:255|unique:products',
+            'description' => 'required',
+            'suggested_use' => 'required',
+            'line_id' => 'required',
+            'category_id' => 'required',
+            'feature_id' => 'required',
         ];
 
         if ($product) {
             $rules['slug'] = 'required|max:255|unique:products,slug,' . $product->id;
+            $rules['subcategory_id']='required';
         }
 
         return $rules;

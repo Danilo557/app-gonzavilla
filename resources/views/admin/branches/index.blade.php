@@ -1,0 +1,87 @@
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Branches</h1>
+@stop
+
+@section('content')
+    <div class="container">
+        @if (session('info'))
+            <div class="alert alert-success mt-2" role="alert">
+                {{ session('info') }}
+            </div>
+        @endif
+
+        <div class="d-flex flex-column">
+            <div>
+                <a class="btn btn-success  mb-3" href="{{ route('admin.branches.create') }}">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+            <div class="card">
+
+                <div class="card-body">
+                    <table id="example" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Estado</th>
+                                <th>Municipio</th>
+                                <th>Type</th>
+                                <th>Direccion</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($branches as $branch)
+                                <tr>
+                                    <td>
+                                        
+                                        {{ $branch->state->name }}
+                                    </td>
+                                    <td>
+                                        {{ $branch->municipality->name }}
+                                    </td>
+                                    <td>
+                                        {{ $branch->type->name }}
+                                    </td>
+                                    <td>
+                                        {{ $branch->address }}
+                                    </td>
+
+                                    <td class="text-center">
+                                         
+                                        <a class="btn btn-primary" href="{{ route('admin.branches.edit', $branch->id) }}">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="{{ route('admin.branches.destroy', $branch) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-lg btn-danger"><i class="fas fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    @stop
+
+    @section('css')
+
+    @stop
+
+
+    @section('plugins.Datatables', true)
+
+    @section('js')
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="{{ asset('js/datatable-config.js') }}"></script>
+    @stop

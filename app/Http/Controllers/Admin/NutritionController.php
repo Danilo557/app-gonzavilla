@@ -50,4 +50,10 @@ class NutritionController extends Controller
         $this->nutritionService->destroy($nutrition);
         return redirect()->route('admin.nutrition.index')->with('info', 'Se elimino el registro');
     }
+
+
+     
+
+
+   
 }

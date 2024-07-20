@@ -353,6 +353,13 @@ return [
             'active' => ['admin/products*']
         ],
 
+        [
+            'text' => 'Branches',
+            'url'  => 'admin/branches',
+            'icon' => 'fab fa-product-hunt',
+            'active' => ['admin/branches*']
+        ],
+
 
     ],
 
@@ -468,7 +475,7 @@ return [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => 'https://cdn.jsdelivr.net/npm/sweetalert2@11',
                 ],
             ],
         ],
