@@ -42,4 +42,5 @@
         var municipalities_endpoint = "{{ route('municipalities') }}";
     </script>
     <script src="{{ asset('js/branches.min.js') }}"></script>
+    
 @stop

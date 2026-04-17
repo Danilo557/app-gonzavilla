@@ -24,11 +24,12 @@ class BrancheRequest extends FormRequest
 
         $rules= [
             'address'=>'required',
-            'phone' => ['required', 'regex:/^[0-9]{9}/'],
-            'whatsapp' => ['required', 'regex:/^[0-9]{9}/'],
+            'phone' => ['required',"regex:/^\d{10}$/"],
+            'whatsapp' => ['required', 'regex:/^\d{10}$/'],
             'state_id' => 'required|exists:states,id',
             'municipality_id' => 'required|exists:municipalities,id',
-            'map'=>'required'
+            'map'=>'required|url',
+            'type_id'=>'required'
         ];
         return $rules;
     }

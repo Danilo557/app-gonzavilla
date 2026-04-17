@@ -35,30 +35,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($branches as $branch)
+                            @foreach ($branches as $branche)
                                 <tr>
                                     <td>
                                         
-                                        {{ $branch->state->name }}
+                                        {{ $branche->state->name }}
                                     </td>
                                     <td>
-                                        {{ $branch->municipality->name }}
+                                        {{ $branche->municipality->name }}
                                     </td>
                                     <td>
-                                        {{ $branch->type->name }}
+                                        {{ $branche->type->name }}
                                     </td>
                                     <td>
-                                        {{ $branch->address }}
+                                        {{ $branche->address }}
                                     </td>
 
                                     <td class="text-center">
                                          
-                                        <a class="btn btn-primary" href="{{ route('admin.branches.edit', $branch->id) }}">
+                                        <a class="btn btn-primary" href="{{ route('admin.branches.edit', $branche->id) }}">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        <form action="{{ route('admin.branches.destroy', $branch) }}" method="POST">
+                                        <form action="{{ route('admin.branches.destroy', $branche) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-lg btn-danger"><i class="fas fa-trash"></i></button>

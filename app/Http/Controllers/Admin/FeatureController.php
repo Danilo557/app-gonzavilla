@@ -19,35 +19,32 @@ class FeatureController extends Controller
 
     public function index()
     {
-        $features = $this->featureService->all();
-        return view('admin.features.index', compact("features"));
+
+        return $this->featureService->index();
     }
 
     public function create()
     {
-        return view('admin.features.create');
+        return $this->featureService->create();
     }
 
     public function store(FeatureRequest  $request)
     {
-        $newFeature = $this->featureService->store($request);
-        return redirect()->route('admin.features.edit', $newFeature)->with('info', 'registro creado');
+        return  $this->featureService->store($request);
     }
 
     public function edit(Feature $feature)
     {
-        return view('admin.features.edit', compact("feature"));
+        return  $this->featureService->edit($feature);
     }
 
     public function update(FeatureRequest $request, Feature $feature)
     {
-        $updatefeature = $this->featureService->update($request, $feature);
-        return redirect()->route('admin.features.edit', $updatefeature)->with('info', 'registro actualizado');
+        return  $this->featureService->update($feature, $request);
     }
 
     public function destroy(Feature $feature)
     {
-        $this->featureService->destroy($feature);
-        return redirect()->route('admin.features.index')->with('info', 'Se elimino el registro');
+        return  $this->featureService->destroy($feature);
     }
 }

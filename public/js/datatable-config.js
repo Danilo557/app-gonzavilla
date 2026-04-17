@@ -1,27 +1,25 @@
 $(function () {
 
 
-    $(document).on('click', '.btn-danger', function() {
-        $form = $(this).closest("form");
-         
-        $($form).submit(function(event) {
-            event.preventDefault();
-            Swal.fire({
-                title: 'Eliminar',
-                text: "¿Seguro que desea eliminar el registro?",
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: '¡Sí, bórralo!',
-                allowOutsideClick: false
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $($form).unbind().submit();
-                }
-            })
-        });
+   $(document).on('click', '.btn-danger', function(event) {
+    event.preventDefault(); // Evita el envío inmediato del formulario
+    const $form = $(this).closest("form");
+
+    Swal.fire({
+        title: 'Eliminar',
+        text: "¿Seguro que desea eliminar el registro?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí, bórralo!',
+        allowOutsideClick: false
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $form.submit(); // Envía el formulario si se confirma
+        }
     });
+});
 
 
     $('#example').DataTable({

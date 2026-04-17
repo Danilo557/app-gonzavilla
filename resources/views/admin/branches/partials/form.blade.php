@@ -1,11 +1,23 @@
-<div class="form-group">
-    {!! Form::label('address', 'Direccion', []) !!}
-    {!! Form::text('address', null, ['class' => 'form-control', 'placeholder' => 'Direccion']) !!}
-    @error('address')
-        <small class="text-danger">{{ $message }}</small>
-    @enderror
+<div class="row">
+    <div class="col-lg-6">
+        <div class="form-group">
+            {!! Form::label('address', 'Direccion', []) !!}
+            {!! Form::text('address', null, ['class' => 'form-control', 'placeholder' => 'Direccion']) !!}
+            @error('address')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            {!! Form::label('type_id', 'Tipo') !!}
+            {!! Form::select('type_id', $types, null, ['class' => 'form-control', 'placeholder' => 'Tipo']) !!}
+            @error('type_id')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+    </div>
 </div>
-
 <div class="row">
     <div class="col-lg-6">
         <div class="form-group">
@@ -75,7 +87,7 @@
             <div id="iframap">
 
             </div>
-            
+
         </div>
     </div>
 </div>

@@ -399,7 +399,7 @@ return [
 
     'plugins' => [
 
-
+        
         'Datatables' => [
             'active' => false,
             'files' => [
@@ -414,6 +414,7 @@ return [
                     'location' => 'https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js',
                 ],
 
+                 
 
                 //buttons
 
@@ -494,6 +495,9 @@ return [
                 ],
             ],
         ],
+
+        
+        
     ],
 
     /*

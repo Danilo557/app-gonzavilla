@@ -38,7 +38,7 @@ class ProductService
     }
 
     public function store(Request $request)
-    {
+    {   
         $product = Product::create($request->all());
         $product->sizes()->sync($request->sizes);
         return redirect()->route('admin.products.edit', $product)->with('info', 'registro creado');

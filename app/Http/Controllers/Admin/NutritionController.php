@@ -19,41 +19,31 @@ class NutritionController extends Controller
 
     public function index()
     {
-        $nutritions = $this->nutritionService->all();
-        return view('admin.nutrition.index', compact("nutritions"));
+        return $this->nutritionService->index();
     }
 
     public function create()
     {
-        return view('admin.nutrition.create');
+        return $this->nutritionService->create();
     }
 
     public function store(NutritionRequest  $request)
     {
-        $newNutrition = $this->nutritionService->store($request);
-        return redirect()->route('admin.nutrition.edit', $newNutrition)->with('info', 'registro creado');
+        return $this->nutritionService->store($request);
     }
 
     public function edit(Nutrition $nutrition)
     {
-        return view('admin.nutrition.edit', compact("nutrition"));
+        return $this->nutritionService->edit($nutrition);
     }
 
     public function update(NutritionRequest $request, Nutrition $nutrition)
     {
-        $updatenutrition = $this->nutritionService->update($request, $nutrition);
-        return redirect()->route('admin.nutrition.edit', $updatenutrition)->with('info', 'registro actualizado');
+        return $this->nutritionService->update($request, $nutrition);
     }
 
     public function destroy(Nutrition $nutrition)
     {
-        $this->nutritionService->destroy($nutrition);
-        return redirect()->route('admin.nutrition.index')->with('info', 'Se elimino el registro');
+        return $this->nutritionService->delete($nutrition);
     }
-
-
-     
-
-
-   
 }

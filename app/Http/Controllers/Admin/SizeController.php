@@ -19,35 +19,31 @@ class SizeController extends Controller
 
     public function index()
     {
-        $sizes = $this->sizeService->all();
-        return view('admin.sizes.index', compact("sizes"));
+        return $this->sizeService->index();
     }
 
     public function create()
     {
-        return view('admin.sizes.create');
+        return $this->sizeService->create();
     }
 
     public function store(SizeRequest  $request)
     {
-        $newSize = $this->sizeService->store($request);
-        return redirect()->route('admin.sizes.edit', $newSize)->with('info', 'registro creado');
+        return $this->sizeService->store($request);
     }
 
     public function edit(Size $size)
     {
-        return view('admin.sizes.edit', compact("size"));
+        return $this->sizeService->edit($size);
     }
 
     public function update(SizeRequest $request, Size $size)
     {
-        $updatesize = $this->sizeService->update($request, $size);
-        return redirect()->route('admin.sizes.edit', $updatesize)->with('info', 'registro actualizado');
+        return $this->sizeService->update($size, $request);
     }
 
     public function destroy(Size $size)
     {
-        $this->sizeService->destroy($size);
-        return redirect()->route('admin.sizes.index')->with('info', 'Se elimino el registro');
+       return $this->sizeService->destroy($size);
     }
 }

@@ -19,37 +19,31 @@ class SubcategoryController extends Controller
 
     public function index()
     {
-        $subcategories = $this->subcategoryService->all();
-        return view('admin.subcategories.index', compact("subcategories"));
+        return $this->subcategoryService->index();
     }
 
     public function create()
     {
-        $categories = $this->subcategoryService->categories();
-        return view('admin.subcategories.create', compact("categories"));
+        return $this->subcategoryService->create();
     }
 
     public function store(SubcategoryRequest $request)
     {
-        $newSubcategory = $this->subcategoryService->store($request);
-        return redirect()->route('admin.subcategories.edit', $newSubcategory)->with('info', 'registro creado');
+        return $this->subcategoryService->store($request);
     }
 
     public function edit(Subcategory $subcategory)
     {
-        $categories = $this->subcategoryService->categories();
-        return view('admin.subcategories.edit', compact("subcategory", "categories"));
+        return $this->subcategoryService->edit($subcategory);
     }
 
     public function update(SubcategoryRequest $request, Subcategory $subcategory)
     {
-        $updatesubcategory = $this->subcategoryService->update($request, $subcategory);
-        return redirect()->route('admin.subcategories.edit', $updatesubcategory)->with('info', 'registro actualizado');
+        return $this->subcategoryService->update($request, $subcategory);
     }
 
     public function destroy(Subcategory $subcategory)
     {
-        $this->subcategoryService->destroy($subcategory);
-        return redirect()->route('admin.subcategories.index')->with('info', 'Se elimino el registro');
+        return $this->subcategoryService->delete($subcategory);
     }
 }

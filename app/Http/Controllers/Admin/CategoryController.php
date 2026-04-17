@@ -19,39 +19,31 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = $this->categoryService->all();
-        return view('admin.categories.index', compact('categories'));
+        return $this->categoryService->index();
     }
 
     public function create()
     {
-        return view('admin.categories.create');
+        return $this->categoryService->create();
     }
 
     public function store(CategoryRequest $request)
     {
-
-        $newCategory = $this->categoryService->store($request);
-
-        return redirect()->route('admin.categories.edit', $newCategory)->with('info', 'registro creado');
+        return $this->categoryService->store($request);
     }
 
     public function edit(Category $category)
     {
-        return view('admin.categories.edit', compact("category"));
+        return $this->categoryService->edit($category);
     }
 
     public function update(Category $category, CategoryRequest $request)
     {
-
-        $updateCategory = $this->categoryService->update($request, $category);
-        return redirect()->route('admin.categories.edit', $updateCategory)->with('info', 'registro actualizado');
+        return  $this->categoryService->updat($request, $category);
     }
 
     public function destroy(Category $category)
     {
-        $this->categoryService->destroy($category);
-
-        return redirect()->route('admin.categories.index')->with('info', 'Se elimino el registro');
+        return $this->categoryService->delete($category);
     }
 }

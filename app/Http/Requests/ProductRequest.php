@@ -28,8 +28,10 @@ class ProductRequest extends FormRequest
             'slug' => 'required|max:255|unique:products',
             'description' => 'required',
             'suggested_use' => 'required',
+            'ingredients' => 'required',
             'line_id' => 'required',
             'category_id' => 'required',
+            'subcategory_id'=>'required',
             'feature_id' => 'required',
         ];
 
